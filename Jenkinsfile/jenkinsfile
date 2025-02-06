@@ -2,6 +2,9 @@ pipeline {
     agent any
 
     stages {
+        stage('Git checkout'){
+            git branch: 'main', url: 'https://github.com/vikash-kumar01/mrdevops_java_app.git'
+        }
         stage('Build') {
             steps {
                 echo "Building.."
