@@ -10,17 +10,19 @@ pipeline {
     }
 
 
-      stage('Git Checkout'){
-                        when { expression {  params.action == 'create' } }
-                steps{
-                gitCheckout(
-                    branch: "main",
-                    url: "https://github.com/mhulic/jenkins-javaapp-2025.git"
-                )
-                }
-            }
-
     stages {
+
+        stage('Git Checkout'){
+                            when { expression {  params.action == 'create' } }
+                    steps{
+                    gitCheckout(
+                        branch: "main",
+                        url: "https://github.com/mhulic/jenkins-javaapp-2025.git"
+                    )
+           }
+        }
+
+
         stage('Build') {
             steps {
                 echo "Building.."
