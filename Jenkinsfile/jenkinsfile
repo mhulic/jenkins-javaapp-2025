@@ -1,3 +1,5 @@
+@Library('jenkins-shared-lib-2025') _
+
 pipeline {
     agent any
 
